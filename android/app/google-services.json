@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92455494054",
+    "project_id": "mad-project-firebase-chat",
+    "storage_bucket": "mad-project-firebase-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92455494054:android:0aed381da1848c70f86f67",
+        "android_client_info": {
+          "package_name": "com.example.firebase_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92455494054-u3ni6g687ina15tdcpvr9m2ulg1j6l5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Rn5S2vnxtLFVrEkiygt1NjOV87d-dzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92455494054-u3ni6g687ina15tdcpvr9m2ulg1j6l5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
