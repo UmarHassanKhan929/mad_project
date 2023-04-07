@@ -1,6 +1,20 @@
+import 'package:firebase_chat/common/routes/pages.dart';
+import 'package:firebase_chat/firebase_options.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-void main() {
+import 'common/services/services.dart';
+import 'common/store/config.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Get.putAsync<StorageService>(() => StorageService().init());
+  Get.put<ConfigStore>(ConfigStore());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -10,15 +24,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Center(
-        child: Container(
-          child: Text('Hello World'),
+    return ScreenUtilInit(
+      builder: (context, child) => GetMaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
         ),
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.routes,
+        // home: Center(
+        //   child: Container(
+        //     child: Text('Hello World'),
+        //   ),
+        // ),
       ),
     );
   }
