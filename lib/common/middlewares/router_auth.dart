@@ -4,9 +4,7 @@ import 'package:firebase_chat/common/store/store.dart';
 
 import 'package:get/get.dart';
 
-/// 检查是否登录
 class RouteAuthMiddleware extends GetMiddleware {
-  // priority 数字小优先级高
   @override
   int? priority = 0;
 
@@ -14,7 +12,9 @@ class RouteAuthMiddleware extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    if (UserStore.to.isLogin || route == AppRoutes.SIGN_IN || route == AppRoutes.INITIAL) {
+    if (UserStore.to.isLogin ||
+        route == AppRoutes.SIGN_IN ||
+        route == AppRoutes.INITIAL) {
       return null;
     } else {
       Future.delayed(

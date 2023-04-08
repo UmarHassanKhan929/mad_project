@@ -2,4 +2,4 @@
 
 A mobile chat app made in Flutter, as semester project for mobile application development (MAD) course.
 
-- 1:30:06
+- 2:26:58 video time
