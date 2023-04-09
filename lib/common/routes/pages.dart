@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import '../../pages/application/index.dart';
 import '../../pages/welcome/index.dart';
 import '../../pages/signin/index.dart';
+import '../../pages/contact/index.dart';
+import '../../pages/messages/chat/index.dart';
 // import 'package:firebase_chat/pages/welcome/index.dart';
 // import 'package:firebase_chat/pages/signin/index.dart';
 
@@ -41,11 +43,15 @@ class AppPages {
         // RouteAuthMiddleware(priority: 1),
       ],
     ),
+    GetPage(
+        name: AppRoutes.Contact,
+        page: () => ContactPage(),
+        binding: ContactBinding()),
+    GetPage(
+        name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
 /*
-    GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
     GetPage(name: AppRoutes.Message, page: () => MessagePage(), binding: MessageBinding()),
     GetPage(name: AppRoutes.Me, page: () => MePage(), binding: MeBinding()),
-    GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
     GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),*/
   ];
 }
