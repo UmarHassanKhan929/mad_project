@@ -87,7 +87,7 @@ class ChatController extends GetxController {
             fromFirestore: Msgcontent.fromFirestore,
             toFirestore: (Msgcontent msgcontent, options) =>
                 msgcontent.toFirestore())
-        .orderBy("addtime", descending: true);
+        .orderBy("addtime", descending: false);
     state.msgcontentlist.clear();
 
     listener = messages.snapshots().listen((event) {

@@ -2,6 +2,7 @@ import 'package:firebase_chat/common/values/colors.dart';
 import 'package:firebase_chat/common/widgets/button.dart';
 import 'package:firebase_chat/pages/application/controller.dart';
 import 'package:firebase_chat/pages/contact/index.dart';
+import 'package:firebase_chat/pages/messages/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -24,19 +25,11 @@ class ApplicationPage extends GetView<ApplicationController> {
           controller.handlePageChanged(index);
           // controller.state.page.value = index;
         },
-        children: [
-          Center(
-            child: Container(
-              color: Colors.red,
-              child: Text('Chat'),
-            ),
-          ),
+        children: const [
+          MessagePage(),
           ContactPage(),
           Center(
-            child: Container(
-              color: Colors.blue,
-              child: Text('Profile'),
-            ),
+            child: Text('Profile'),
           ),
         ],
       );
