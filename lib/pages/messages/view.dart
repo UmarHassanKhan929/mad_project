@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_chat/common/values/colors.dart';
 import '../../common/widgets/app.dart';
+import 'chat/widgets/message_list.dart';
 
 class MessagePage extends StatelessWidget {
   const MessagePage({super.key});
@@ -25,6 +26,7 @@ class MessagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
+      body: MessageList(),
     );
   }
 }
