@@ -8,6 +8,7 @@ import '../../pages/welcome/index.dart';
 import '../../pages/signin/index.dart';
 import '../../pages/contact/index.dart';
 import '../../pages/messages/chat/index.dart';
+import '../../pages/messages/photoview/index.dart';
 // import 'package:firebase_chat/pages/welcome/index.dart';
 // import 'package:firebase_chat/pages/signin/index.dart';
 
@@ -51,7 +52,10 @@ class AppPages {
         name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
 /*
     GetPage(name: AppRoutes.Message, page: () => MessagePage(), binding: MessageBinding()),
-    GetPage(name: AppRoutes.Me, page: () => MePage(), binding: MeBinding()),
-    GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),*/
+    GetPage(name: AppRoutes.Me, page: () => MePage(), binding: MeBinding()),*/
+    GetPage(
+        name: AppRoutes.Photoimgview,
+        page: () => PhotoImageView(),
+        binding: PhotoImageViewBinding()),
   ];
 }
