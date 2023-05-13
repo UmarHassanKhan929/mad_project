@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:firebase_chat/common/entities/entities.dart';
+import 'package:firebase_chat/common/routes/pages.dart';
 import 'package:firebase_chat/pages/profile/state.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../common/routes/names.dart';
 import '../../common/store/user.dart';
 
 class ProfileController extends GetxController {
@@ -23,6 +25,12 @@ class ProfileController extends GetxController {
           UserLoginResponseEntity.fromJson(jsonDecode(profile));
       state.head_detail.value = userdata;
     }
+  }
+
+  Future<void> onLogOut() async {
+    UserStore.to.onLogout();
+    await _googleSignIn.signOut();
+    Get.offAndToNamed(AppRoutes.SIGN_IN);
   }
 
   @override

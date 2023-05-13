@@ -32,7 +32,11 @@ class ProfilePage extends GetView<ProfileController> {
       margin: EdgeInsets.only(bottom: 1.w),
       padding: EdgeInsets.only(top: 0.w, left: 15.w, right: 15.w),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          if (item.route == "/logout") {
+            controller.onLogOut();
+          }
+        },
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
