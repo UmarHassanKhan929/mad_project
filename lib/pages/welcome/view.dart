@@ -98,7 +98,7 @@ class WelcomePage extends GetView<WelcomeController> {
               Positioned(
                 bottom: 70,
                 child: DotsIndicator(
-                  position: controller.state.index.value.toDouble(),
+                  position: controller.state.index.value.toInt(),
                   dotsCount: 3,
                   reversed: false,
                   mainAxisAlignment: MainAxisAlignment.center,
