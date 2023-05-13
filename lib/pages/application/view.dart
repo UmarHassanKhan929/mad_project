@@ -1,16 +1,11 @@
 import 'package:firebase_chat/common/values/colors.dart';
-import 'package:firebase_chat/common/widgets/button.dart';
 import 'package:firebase_chat/pages/application/controller.dart';
 import 'package:firebase_chat/pages/contact/index.dart';
 import 'package:firebase_chat/pages/messages/view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 
-import '../../common/values/shadows.dart';
+import '../profile/view.dart';
 
 class ApplicationPage extends GetView<ApplicationController> {
   const ApplicationPage({Key? key}) : super(key: key);
@@ -25,13 +20,7 @@ class ApplicationPage extends GetView<ApplicationController> {
           controller.handlePageChanged(index);
           // controller.state.page.value = index;
         },
-        children: const [
-          MessagePage(),
-          ContactPage(),
-          Center(
-            child: Text('Profile'),
-          ),
-        ],
+        children: const [MessagePage(), ContactPage(), ProfilePage()],
       );
     }
 
