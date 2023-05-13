@@ -18,7 +18,26 @@ class MessageList extends GetView<MessageController> {
     return Container(
       padding: EdgeInsets.only(top: 10.w, left: 15.w, right: 15.w),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          var to_uid = "";
+          var to_name = "";
+          var to_avatar = "";
+          if (item.data().from_uid == controller.token) {
+            to_uid = item.data().to_uid ?? "";
+            to_name = item.data().to_name ?? "";
+            to_avatar = item.data().to_avatar ?? "";
+          } else {
+            to_uid = item.data().from_uid ?? "";
+            to_name = item.data().from_name ?? "";
+            to_avatar = item.data().from_avatar ?? "";
+          }
+          Get.toNamed("/chat", parameters: {
+            "doc_id": item.id,
+            "to_uid": to_uid,
+            "to_name": to_name,
+            "to_avatar": to_avatar
+          });
+        },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
