@@ -1,7 +1,10 @@
 import 'package:firebase_chat/common/entities/entities.dart';
+import 'package:firebase_chat/common/routes/names.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:get/get.dart';
 
 Widget ChatRightItem(Msgcontent item) {
   return Container(
@@ -39,7 +42,11 @@ Widget ChatRightItem(Msgcontent item) {
                       maxWidth: 90.w,
                     ),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(AppRoutes.Photoimgview, parameters: {
+                          "url": "${item.content}",
+                        });
+                      },
                       child: CachedNetworkImage(
                         imageUrl: "${item.content}",
                       ),

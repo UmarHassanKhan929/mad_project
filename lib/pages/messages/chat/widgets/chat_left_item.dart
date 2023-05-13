@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:get/get.dart';
+
+import '../../../../common/routes/names.dart';
+
 Widget ChatLeftItem(Msgcontent item) {
   return Container(
     padding: EdgeInsets.only(top: 10.w, left: 15.w, right: 15.w, bottom: 10.w),
@@ -39,7 +43,11 @@ Widget ChatLeftItem(Msgcontent item) {
                       maxWidth: 90.w,
                     ),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(AppRoutes.Photoimgview, parameters: {
+                          "url": "${item.content}",
+                        });
+                      },
                       child: CachedNetworkImage(
                         imageUrl: "${item.content}",
                       ),

@@ -90,16 +90,6 @@ class ChatPage extends GetView<ChatController> {
                                 color: AppColors.primaryBackground,
                                 fontSize: 16.sp),
                           ),
-                          Text(
-                            "unknown location",
-                            overflow: TextOverflow.clip,
-                            maxLines: 1,
-                            style: TextStyle(
-                                fontFamily: 'Avenir',
-                                fontWeight: FontWeight.normal,
-                                color: AppColors.primaryBackground,
-                                fontSize: 14.sp),
-                          ),
                         ],
                       ),
                     ),
